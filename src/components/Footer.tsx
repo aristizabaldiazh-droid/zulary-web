@@ -117,3 +117,11 @@ export default function Footer() {
     </footer>
   );
 }
+<div style={{ marginTop: 10 }}>
+  <a href="/privacidad" style={{ marginRight: 12 }}>
+    Política de Privacidad
+  </a>
+  <a href="/terminos">
+    Términos y Condiciones
+  </a>
+</div>
