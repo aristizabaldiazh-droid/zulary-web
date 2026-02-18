@@ -7,6 +7,11 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://zulary-web.vercel.app"), // cambiar cuando tengas dominio propio
 
+  // ✅ Google Search Console verification
+  verification: {
+    google: "JDqIZoAj5D0HizvPPMwGEYFe29Zvaj7LiUW5mQeTegU",
+  },
+
   title: {
     default: "Zulary | Gorras al por mayor en Colombia",
     template: "%s | Zulary",
@@ -87,8 +92,7 @@ export default function RootLayout({
       <body
         style={{
           margin: 0,
-          fontFamily:
-            "system-ui, -apple-system, Segoe UI, Roboto, Arial",
+          fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Arial",
           background:
             "radial-gradient(circle at 20% 20%, #1e3a8a 0%, transparent 40%), radial-gradient(circle at 80% 30%, #7c2d12 0%, transparent 40%), linear-gradient(135deg, #0f172a 0%, #111827 100%)",
           color: "#f1f5f9",
