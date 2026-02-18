@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://zulary-web.vercel.app"), // luego lo cambiamos por tu dominio real
+  metadataBase: new URL("https://zulary-web.vercel.app"), // cambiar cuando tengas dominio propio
+
   title: {
     default: "Zulary | Gorras al por mayor en Colombia",
     template: "%s | Zulary",
   },
+
   description:
     "Venta de gorras al por mayor en Colombia. Pedido mínimo 12 unidades. Precios con IVA. Punto físico en CC Sabana Plaza Bogotá. Envíos nacionales.",
+
   keywords: [
     "gorras al por mayor",
     "gorras por mayor Colombia",
@@ -20,6 +24,7 @@ export const metadata: Metadata = {
     "gorras acrílicas",
     "gorras malla",
   ],
+
   authors: [{ name: "Zulary Internacional SAS" }],
   creator: "Zulary Internacional SAS",
   publisher: "Zulary Internacional SAS",
@@ -35,8 +40,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/logo.png",
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 630,
         alt: "Zulary Gorras al por mayor",
       },
     ],
@@ -63,10 +68,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-H5PFD1SYBH"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-H5PFD1SYBH');
+          `}
+        </Script>
+      </head>
+
       <body
         style={{
           margin: 0,
-          fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Arial",
+          fontFamily:
+            "system-ui, -apple-system, Segoe UI, Roboto, Arial",
           background:
             "radial-gradient(circle at 20% 20%, #1e3a8a 0%, transparent 40%), radial-gradient(circle at 80% 30%, #7c2d12 0%, transparent 40%), linear-gradient(135deg, #0f172a 0%, #111827 100%)",
           color: "#f1f5f9",
