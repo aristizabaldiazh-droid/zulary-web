@@ -4,16 +4,56 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Zulary | Gorras al por mayor en Colombia",
+  metadataBase: new URL("https://zulary-web.vercel.app"), // luego lo cambiamos por tu dominio real
+  title: {
+    default: "Zulary | Gorras al por mayor en Colombia",
+    template: "%s | Zulary",
+  },
   description:
-    "Venta de gorras al por mayor. Pedido mínimo 12 unidades. Precios con IVA. Compra por WhatsApp y paga por transferencia Bancolombia. Envíos nacionales.",
+    "Venta de gorras al por mayor en Colombia. Pedido mínimo 12 unidades. Precios con IVA. Punto físico en CC Sabana Plaza Bogotá. Envíos nacionales.",
   keywords: [
     "gorras al por mayor",
-    "gorras Colombia",
-    "gorras con IVA",
-    "gorras mayoristas",
+    "gorras por mayor Colombia",
+    "mayorista de gorras Bogotá",
     "proveedor de gorras",
+    "gorras para revender",
+    "gorras acrílicas",
+    "gorras malla",
   ],
+  authors: [{ name: "Zulary Internacional SAS" }],
+  creator: "Zulary Internacional SAS",
+  publisher: "Zulary Internacional SAS",
+
+  openGraph: {
+    title: "Zulary | Gorras al por mayor en Colombia",
+    description:
+      "Mayorista de gorras en Colombia. Pedido mínimo 12 unidades. Punto físico en Bogotá. Envíos nacionales.",
+    url: "https://zulary-web.vercel.app",
+    siteName: "Zulary",
+    locale: "es_CO",
+    type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        width: 800,
+        height: 600,
+        alt: "Zulary Gorras al por mayor",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Zulary | Gorras al por mayor",
+    description:
+      "Compra gorras al por mayor en Colombia. Pedido mínimo 12 unidades.",
+    images: ["/logo.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
