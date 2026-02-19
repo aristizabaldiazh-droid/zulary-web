@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useMemo, useState } from "react";
 
 const LINKS = [
+  { href: "/", label: "Inicio" },
   { href: "/tienda", label: "Tienda" },
   { href: "/pago", label: "Pago en línea" },
   { href: "/nosotros", label: "Nosotros" },
@@ -94,6 +95,7 @@ export default function Header() {
               <Link
                 key={l.href}
                 href={l.href}
+                onClick={() => setOpen(false)}
                 style={{
                   padding: "10px 12px",
                   borderRadius: 12,
@@ -117,7 +119,8 @@ export default function Header() {
                     bottom: 6,
                     height: 2,
                     borderRadius: 999,
-                    background: "linear-gradient(90deg, var(--primary), var(--accent))",
+                    background:
+                      "linear-gradient(90deg, var(--primary), var(--accent))",
                     opacity: active ? 1 : 0,
                     transform: active ? "scaleX(1)" : "scaleX(.5)",
                     transformOrigin: "left",
@@ -174,8 +177,17 @@ export default function Header() {
             backdropFilter: "blur(12px)",
           }}
         >
-          <div className="container" style={{ paddingTop: 10, paddingBottom: 14 }}>
-            <div style={{ color: "rgba(255,255,255,.75)", fontWeight: 800, marginBottom: 10 }}>
+          <div
+            className="container"
+            style={{ paddingTop: 10, paddingBottom: 14 }}
+          >
+            <div
+              style={{
+                color: "rgba(255,255,255,.75)",
+                fontWeight: 800,
+                marginBottom: 10,
+              }}
+            >
               {activeLabel ? `Estás en: ${activeLabel}` : "Menú"}
             </div>
 
@@ -193,7 +205,9 @@ export default function Header() {
                       fontWeight: 950,
                       color: "#fff",
                       textDecoration: "none",
-                      background: active ? "rgba(255,255,255,0.10)" : "rgba(255,255,255,0.06)",
+                      background: active
+                        ? "rgba(255,255,255,0.10)"
+                        : "rgba(255,255,255,0.06)",
                       border: "1px solid rgba(255,255,255,0.12)",
                     }}
                   >
